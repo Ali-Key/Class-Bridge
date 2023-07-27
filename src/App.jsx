@@ -1,44 +1,30 @@
-import { useState } from 'react'
-import Login from './component/user/Login'
-import { Route, Routes } from 'react-router-dom'
+import React from 'react'
+
 import Header from './component/Header'
+import { Sidebar } from './component/Sidebar'
+import Home from './component/Home'
+import { Route, Routes } from 'react-router-dom'
+import Login from './component/user/Login'
 import SignUp from './component/user/SignUp'
+import Classes from './component/Classes/Classes'
+// import AddClass from './component/Classes/AddClass'
 
-function App() {
-
-
+export const App = () => {
   return (
-    <>
-       <div className= "min-h-screen flex bg-gray-100">
-      <div className="w-full">
-        <div className="flex flex-col items-center">
-        <Header/>
-          <h3 className="text-3xl text-white mb-5 mt-5"> Classridge</h3>
+    <div>
+      <Header/>
+      <Sidebar/>
+  
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/Login' element={<Login/>}/>
+        <Route path='/SignUp' element={<SignUp/>}/>
+        <Route path='/Classes' element={<Classes/>}/>
+        {/* <Route path='/AddClass' element={<AddClass/>}/> */}
         
-          <Routes>
-          
-
-            
-            {/* <Route path="/addClass" element={<Add Class/>} /> */}
-         
-           
-            {/* <Route path="/edit/:id" element={<EditClass />} />            */}
-            <Route path="/user/login" element={<Login />} />
-            {/* <Route path="/classes" element={<Classes />} /> */}
-            {/* <Route path="/user/profile" element={<Profile/>} /> */}
-            <Route path="/user/login/register" element={<SignUp/>} />
-          
-          
-          </Routes>
-            
-          
-     
-        </div>
-        </div>
-        </div>
-      
-    </>
+      </Routes>
+    </div>
   )
 }
 
-export default App
+

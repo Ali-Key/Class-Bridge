@@ -1,106 +1,115 @@
-import { ErrorMessage, Field, Form, Formik } from 'formik'
+import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
-
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+// import Signup from "../../assets/signup.png";
 
 const SignUp = () => {
+  const [registerError, setRegisterError] = useState(null);
 
-  const [ registerError, setRegisterError ] = useState(null);
+  const initialValues = {
+    name: "",
+    email: "",
+    Role: "",
+    password: "",
+  };
 
-    const initialValues = {
-        name: "",
-        email: "",
-        Role:  "",
-        password: "",
-      };
-    
-      const validationSchema = Yup.object({
-        name: Yup.string().required("Name is required"),
-        email: Yup.string().email("Invalid email format").required("Email is required"),
-        password: Yup.string().required("Password is required"),
-      });
+  const validationSchema = Yup.object({
+    name: Yup.string().required("Name is required"),
+    email: Yup.string()
+      .email("Invalid email format")
+      .required("Email is required"),
+    password: Yup.string().required("Password is required"),
+  });
 
   return (
-   <div className="w-full flex flex-row items-center justify-center">
-      <div className="mx-auto rounded-lg bg-white p-10 shadow md:w-1/2 lg:w-1/2">
-        <h4 className="mb-10 text-2xl font-bold">Register</h4>
+    <div className="lg:w-[70%] mx-auto lg:ml-[19%] p-5 shadow rounded mt-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2  space-x-2">
+        <div className="flex flex-col justify-start items-start gap-4 space-y-5 bg-red-400 rounded-lg">
+          <img className="w-100 h-90 " src="\src\assets\Signup.png" />
+         
+        </div>
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
-         
         >
-          <Form className='w-full'>
-            <div className="mb-5">
-              {registerError && <div className="text-red-500">{registerError}</div>}
-            </div>
-            <div className="mb-5">
+          <Form className="flex flex-col justify-center items-start text-center space-y-6 p-5">
+           
+            {/* <div className="mb-5">
+              {registerError && (
+                <div className="text-red-500">{registerError}</div>
+              )}
+            </div> */}
+            
               <Field
+                className="p-3 rounded shadow w-full "
                 type="text"
-                id="name"
+                placeholder="Enter Your name "
                 name="name"
-                placeholder="Name"
-                className="w-full rounded-3xl border border-gray-300 p-3 shadow"
               />
               <ErrorMessage
                 name="name"
                 component="div"
                 className="text-red-500"
               />
-            </div>
-            <div className="mb-5">
+           
+           
               <Field
                 type="text"
                 id="email"
                 name="email"
                 placeholder="Email"
-                className="w-full rounded-3xl border border-gray-300 p-3 shadow"
-              />
+                className="p-3 rounded shadow w-full "              />
               <ErrorMessage
                 name="email"
                 component="div"
                 className="text-red-500"
               />
-            </div>
-            <div className="mb-5">
-            <Field as="select" name="Role">
-             <option value="red">Admin</option>
-             <option value="green">Teacher</option>
-             <option value="blue">Student</option>
-           </Field>
+        
+         
+              <Field as="select" name="Role" className="p-3 rounded shadow w-full "   >
+                <option value="red">Admin</option>
+                <option value="green">Teacher</option>
+                <option value="blue">Student</option>
+              </Field>
 
               <ErrorMessage
                 name="Role"
                 component="div"
                 className="text-red-500"
               />
-            </div>
-            <div className="mb-5">
+           
               <Field
                 type="password"
                 id="password"
                 name="password"
                 placeholder="Password"
-                className="w-full rounded-3xl  border border-gray-300 p-3 shadow"
-              />
+                className="p-3 rounded shadow w-full "              />
               <ErrorMessage
                 name="password"
                 component="div"
                 className="text-red-500"
               />
-            </div>
-         
+        
+
             <button
-              type="submit"
-              className="mt-4  w-full rounded-3xl bg-red-400 px-12 py-3 text-white hover:bg-red-500"
+             className="p-3 rounded shadow w-full bg-red-400 text-[#fff] text-lg"
+             type="submit"
             >
               Register
             </button>
+            <div className=" flex justify-center mt-5 text-base text-center lg:w-[80%] space-x-2">
+            <p className="text-sm ">Already have account?</p>
+            <Link to="/Login" className="text-sm text-red-400 font-medium ">
+              Sign in
+            </Link>
+          </div>
           </Form>
         </Formik>
+       
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SignUp
+export default SignUp;

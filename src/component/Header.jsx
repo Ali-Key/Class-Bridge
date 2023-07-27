@@ -1,21 +1,21 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { CgProfile } from "react-icons/cg";
+import { MdOutlineCircleNotifications } from "react-icons/md";
 
 const Header = () => {
   return (
-    
-    <div className='flex justify-end items-center p-2 bg-gray-200 w-full '>
-    <div className='mr-20'>
-
-      <Link to ='/' className='p-2 text-yellow-700 font-semibold'> Home</Link >
-     <Link to ='addClass'  className='p-2 text-yellow-700 font-semibold'> Add Class</Link>
-     <Link to ='user/profile' className='p-2 text-yellow-700 font-semibold '> Profile</Link >
-     {/* //<Link onClick={handleLogout}className='p-2 text-yellow-700 font-semibold'>Logout</Link> */}
-     <Link to ='user/login'  className='p-2 text-yellow-700 font-semibold'>Login </Link>
-
+    <div className="lg:w-[85%] lg:ml-[15%] p-6 shadow border-b-2">
+      <div className="flex flex-row justify-between items-center space-x-3 lg:w-[95%] mx-auto">
+        <h1 className="lg:text-4xl bg=[#000]">Overview</h1>
+        <div className="flex flex-row justify-end items-center gap-3 space-x-4 mr-10 lg:mr-40">
+        <MdOutlineCircleNotifications size={25}/>
+          <CgProfile size={22} />
+          <span>Ali-Key</span>
+          
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

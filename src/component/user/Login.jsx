@@ -1,11 +1,10 @@
-import { ErrorMessage, Field, Form, Formik } from 'formik'
+import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Login = () => {
-
-    const [loginErrror, setLoginError] = useState(null);
+  const [loginErrror, setLoginError] = useState(null);
 
   const initialValues = {
     email: "",
@@ -13,87 +12,71 @@ const Login = () => {
   };
 
   const validationSchema = Yup.object({
-    email: Yup.string().email("Invalid email format").required("Email is required"),
+    email: Yup.string()
+      .email("Invalid email format")
+      .required("Email is required"),
     password: Yup.string().required("Password is required"),
   });
 
-
   return (
-
-    <div className=" w-screen grid grid-rows-1 grid-cols-2 items-center justify-center">
-
-      <div  className=' mx-auto justify-center items-center  '>
-        <div>
-          <img src='/src/assets/class pridge.JPG' className='w-25 h-25 mb-20 '/>
+    <div className="lg:w-[70%] mx-auto lg:ml-[19%] p-5 shadow rounded mt-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2  space-x-2">
+        <div className="flex flex-col justify-start items-start gap-4 space-y-5 bg-red-400">
+          <img className="w-96 h-80" src="/src/assets/class.png" />
+          <span className="font-normal text-center text-xl mt-3 lg:w-[80%]">
+            Class Bridge Connet and Collaborate
+          </span>
+          <span className="mt-5 text-base text-center lg:w-[80%] p-2">
+            All your Class in One Place
+          </span>
         </div>
-
-        <div>
-        <h1 className='font-bold text-3xl mt-3'>ClassBridge: Connet<br></br> and Collaborate</h1>
-        <p className='mt-5 text-sm'>All your Class in One Place</p>
-        </div>
-
-      </div>
-      <div className=" w-full h-screen mx-auto justify-center items-center rounded-lg  bg-white p-10 shadow  ">
-        <h4 className="mb-10 text-2xl font-bold">Login</h4>
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
-          
         >
+          <Form className="flex flex-col justify-center items-start space-y-6 p-5">
+           
+            <Field
+              className="p-3 rounded shadow w-full "
+              type="text"
+              placeholder="Enter Your Email "
+              name="email"
+            />
+            <ErrorMessage
+              name="email"
+              component="div"
+              className="text-red-500 "
+            />
+            <Field
+              className="p-3 rounded shadow w-full "
+              type="text"
+              placeholder="Enter Your Password "
+              name="password"
+            />
 
-          <Form  className='w-1/2 mx-auto justify-center items-center'> 
-          <div className="mb-5">
-            {loginErrror && <div className="text-red-500">{loginErrror}</div>}
-          </div>
-          <label className='text-sm mb-5'> Enter Your Email</label>
-            <div className="mb-5">
-              <Field
-                type="text"
-                id="email"
-                name="email"
-                placeholder="Email"
-                className="w-full rounded-3xl border-2 border-gray-300 p-3 shadow"
-              />
-              <ErrorMessage
-                name="email"
-                component="div"
-                className="text-red-500"
-              />
-            </div> 
-            <label className='text-sm mb-5'>Password</label>
-            <div className="mb-5">
-             
-              <Field
-                type="password"
-                id="password"
-                name="password"
-                placeholder="Password"
-                className="w-full  rounded-3xl border-1 border-gray-300 p-3 shadow"
-              />
-              <ErrorMessage
-                name="password"
-                component="div"
-                className="text-red-500"
-              />
-            </div>        
+            <ErrorMessage
+              name="password"
+              component="div"
+              className="text-left text-blue-800"
+            />
             <button
+              className="p-3 rounded shadow w-full bg-red-400 text-[#fff]  font-medium text-lg"
               type="submit"
-              className=" w-full mt-4 rounded-3xl bg-red-400 px-12 py-3 text-white hover:bg-red-500"
             >
               Login
             </button>
-            <div>
-            <span className='text-sm mb-5'>Forgo Your Password? </span>
-            
-            <Link to ='/user/login/register' className="text-blue-500 mx-5 font-bold">Sign Up</Link>
+
+            <div className="flex justify-center mt-5 text-base text-center lg:w-[80%] space-x-2">
+              <p className="text-sm ">Don’t have account?</p>
+              <Link to="/SignUp" className="text-sm text-red-400 font-medium ">
+                Sign Up
+              </Link>
             </div>
           </Form>
         </Formik>
-        
       </div>
-      
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
