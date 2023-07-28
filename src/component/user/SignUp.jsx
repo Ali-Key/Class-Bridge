@@ -23,10 +23,10 @@ const SignUp = () => {
   });
 
   return (
-    <div className="lg:w-[70%] mx-auto lg:ml-[19%] p-5 shadow rounded mt-10">
-      <div className="grid grid-cols-1 lg:grid-cols-2  space-x-2">
-        <div className="flex flex-col justify-start items-start gap-4 space-y-5 bg-red-400 rounded-lg">
-          <img className="w-100 h-90 " src="\src\assets\Signup.png" />
+    <div className="lg:w-[70%] mx-auto lg:ml-[19%] p-8 shadow rounded mt-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2  space-x-5">
+        <div className="flex flex-col justify-start items-start gap-6 space-y-10 bg-red-400 rounded-lg">
+          <img className="w-[90%] h-[100%] mx-auto " src="\src\assets\Signup.png" />
          
         </div>
         <Formik

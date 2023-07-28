@@ -7,7 +7,8 @@ import { Route, Routes } from 'react-router-dom'
 import Login from './component/user/Login'
 import SignUp from './component/user/SignUp'
 import Classes from './component/Classes/Classes'
-// import AddClass from './component/Classes/AddClass'
+import Profile from './component/user/profile'
+import AddClass from './component/Classes/AddClass'
 
 export const App = () => {
   return (
@@ -20,7 +21,8 @@ export const App = () => {
         <Route path='/Login' element={<Login/>}/>
         <Route path='/SignUp' element={<SignUp/>}/>
         <Route path='/Classes' element={<Classes/>}/>
-        {/* <Route path='/AddClass' element={<AddClass/>}/> */}
+        <Route path='/Profile' element={<Profile/>}/>
+        <Route path='/AddClass' element={<AddClass/>}/>
         
       </Routes>
     </div>

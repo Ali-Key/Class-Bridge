@@ -16,17 +16,21 @@ export const Sidebar = () => {
         </h1>
         <ul className="flex flex-col justify-start items-start space-y-6">
           <li className="flex flex-row justify-start items-start  space-x-3"><AiTwotoneHome className="inline" size={20}/> <Link to="/">Home</Link></li>
-          <li className="flex flex-row justify-start items-start  space-x-3"><GiClassicalKnowledge className="inline" size={20}/> <Link to="/">Upcoming Classes</Link></li>
-          {/* <li className="flex flex-row justify-start items-start  space-x-3"><GiClassicalKnowledge className="inline" size={20}/> <Link to="/AddClass">Add Class</Link></li> */}
+          {/* <li className="flex flex-row justify-start items-start  space-x-3"><GiClassicalKnowledge className="inline" size={20}/> <Link to="/">Upcoming Classes</Link></li> */}
+          <li className="flex flex-row justify-start items-start  space-x-3"><GiClassicalKnowledge className="inline" size={20}/> <Link to="/AddClass">Add Class</Link></li>
           <li className="flex flex-row justify-start items-start  space-x-3"><GiClassicalKnowledge className="inline" size={20}/> <Link to="/Classes">Classes</Link></li>
           <li className="flex flex-row justify-start items-start  space-x-3"><MdOutlineGrade className="inline" size={20}/> <Link to="/">Grades</Link></li>
           <li className="flex flex-row justify-start items-start  space-x-3"><LiaChalkboardTeacherSolid className="inline" size={20}/> <Link to="/">Teachers</Link></li>
           <li className="flex flex-row justify-start items-start  space-x-3"><CiSettings className="inline" size={20}/> <Link to="/">Setting</Link></li>
           <li className="flex flex-row justify-start items-start  space-x-3"><BiLogInCircle className="inline" size={20}/> <Link to="/Login">Login</Link></li>
-          <li className="flex flex-row justify-start items-start  space-x-3"><CgProfile className="inline" size={20}/> <Link to="/">Profile</Link></li>
+          <li className="flex flex-row justify-start items-start  space-x-3"><CgProfile className="inline" size={20}/> <Link to="/Profile">Profile</Link></li>
           <li className="flex flex-row justify-start items-start  space-x-3"><BiLogInCircle  className="inline" size={20}/> <Link to="/Login">Logout</Link></li>
         </ul>
       </div>
     </div>
   );
 };
+
+
+
+
