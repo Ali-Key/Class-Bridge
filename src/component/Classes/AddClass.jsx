@@ -6,11 +6,13 @@ const AddClass = () => {
   const initialValues = {
     title: "",
     description: "",
+    image: "",
   };
 
   const validationSchema = Yup.object({
     title: Yup.string().required("Title is required"),
     description: Yup.string().required("Description is required"),
+    image: Yup.string().required("Image is required"),
   });
 
   const handleSubmit = (values, { setSubmitting }) => {
@@ -51,6 +53,18 @@ const AddClass = () => {
               />
               <ErrorMessage
                 name="description"
+                component="div"
+                className="text-left text-red-400"
+              />
+
+              <Field
+                className="p-3 rounded shadow w-full"
+                type="text"
+                placeholder="Enter Your url image"
+                name="image"
+              />
+              <ErrorMessage
+                name="=image"
                 component="div"
                 className="text-left text-red-400"
               />
