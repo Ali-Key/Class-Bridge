@@ -20,10 +20,10 @@ const AddClass = () => {
   };
 
   return (
-    <div className="lg:w-[70%] lg:h-[100%] mx-auto lg:ml-[19%] p-8 shadow rounded mt-20">
-      <div className="grid grid-cols-1 lg:grid-cols-2  space-x-4">
+    <div className="lg:w-[70%] lg:h-[19%] mx-auto lg:ml-[19%] p-8 shadow rounded mt-10 font-mono ">
+      <div className="grid grid-cols-1 lg:grid-cols-2  space-x-4 ">
         <div className="flex flex-col justify-start items-start gap-6 space-y-8 bg-red-400 rounded-md">
-          <img className="w-96 h-80 mx-auto" src="/src/assets/Addclass.png" alt="Class" />
+          <img className="w-96 h-100 mx-auto" src="/src/assets/Addclass.png" alt="Class" />
         </div>
         <Formik
           initialValues={initialValues}

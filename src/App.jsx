@@ -9,6 +9,7 @@ import SignUp from './component/user/SignUp'
 import Classes from './component/Classes/Classes'
 import Profile from './component/user/profile'
 import AddClass from './component/Classes/AddClass'
+import EditClass from './component/Classes/EditClass'
 
 export const App = () => {
   return (
@@ -23,6 +24,7 @@ export const App = () => {
         <Route path='/Classes' element={<Classes/>}/>
         <Route path='/Profile' element={<Profile/>}/>
         <Route path='/AddClass' element={<AddClass/>}/>
+        <Route path='/EditClass' element={<EditClass/>}/>
         
       </Routes>
     </div>

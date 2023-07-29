@@ -19,14 +19,14 @@ const Login = () => {
   });
 
   return (
-    <div className="lg:w-[70%] mx-auto lg:ml-[19%] p-5 shadow rounde mt-10 md:w-1/2">
+    <div className="lg:w-[70%] mx-auto lg:ml-[19%] p-8 shadow rounde mt-10 md:w-1/2 font-mono ">
       <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols space-x-2">
-        <div className="flex flex-col justify-start items-start gap-4 space-y-5 bg-red-400 rounded-md">
-          <img className="w-96 h-80" src="/src/assets/class.png" />
-          <span className="font-normal text-center text-xl mt-3 lg:w-[80%] ">
+        <div className="flex flex-col justify-center items-center gap-6  bg-red-400  rounded-lg text-slate-950">
+          <img className="w-96 h-100 mx-auto " src="/src/assets/login.png" />
+          <span className="font-normal text-center text-xl lg:w-[80%] ">
             Class Bridge Connet and Collaborate
           </span>
-          <span className="mt-5 text-base text-center lg:w-[80%] p-2">
+          <span className=" text-base text-center lg:w-[80%] p-4">
             All your Class in One Place
           </span>
         </div>
@@ -37,7 +37,7 @@ const Login = () => {
           <Form className="flex flex-col justify-center items-start space-y-6 p-5">
            
             <Field
-              className="p-3 rounded shadow w-full outline-red-400"
+              className="p-3 rounded shadow w-full "
               type="text"
               placeholder="Enter Your Email "
               name="email"

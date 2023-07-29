@@ -3,7 +3,7 @@ import Classes from './Classes/Classes'
 
 const Home = () => {
   return (
-    <div className=""> 
+    <div className="font-mono "> 
         <Classes/>
     </div>
   )
